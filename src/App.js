@@ -3,10 +3,10 @@ import React from "react";
 import { hot } from 'react-hot-loader/root';
 import PostList from "./PostList";
 
-const App = (props) => {
+const App = () => {
   return (
     <>
-      <h1>Stranger's Things</h1>
+      <h1>Strangers Things</h1>
       <PostList />
     </>
   );
