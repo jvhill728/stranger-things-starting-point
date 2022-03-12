@@ -5,7 +5,10 @@ const PostList = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(async () => {
-        const posts = await getPosts();
+        const { data: {posts}, } = await getPosts({
+            baseURL: "/posts"
+        });
+        console.log(posts);
         setPosts(posts);
     }, []);
 
@@ -14,7 +17,9 @@ const PostList = () => {
             {posts.map(post =>
                 <div key={post.id}>
                     <h2>{post.title}</h2>
-                    <p>{post.body}</p>
+                    <p>{post.username}</p>
+                    <p>{post.description}</p>
+                    <p>{post.location}</p>
                 </div>
             )}
         </div>
